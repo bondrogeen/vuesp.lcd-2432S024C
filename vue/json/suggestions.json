@@ -1,0 +1,66 @@
+[
+  {
+    "label": "sshow",
+    "type": "func",
+    "insert": "sshow(${0})",
+    "detail": "sshow(screen:number) => index:number",
+    "description": "Show a screen by index (starting from 0) and return the active screen index."
+  },
+  {
+    "label": "snext",
+    "type": "func",
+    "insert": "snext()",
+    "detail": "snext() => index:number",
+    "description": "Switch to the next screen and return the active screen index."
+  },
+  {
+    "label": "sprev",
+    "type": "func",
+    "insert": "sprev()",
+    "detail": "sprev() => index:number",
+    "description": "Switch to the previous screen and return the active screen index."
+  },
+  {
+    "label": "sindex",
+    "type": "func",
+    "insert": "sindex()",
+    "detail": "sindex() => index:number",
+    "description": "Return the active screen index without changing it."
+  },
+  {
+    "label": "sval",
+    "type": "func",
+    "insert": "sval(${0}, ${1})",
+    "detail": "sval(slot:number, value:string | number) => ok:number",
+    "description": "Set a text or number on a Data screen slot until the next refresh."
+  },
+  {
+    "label": "sreset",
+    "type": "func",
+    "insert": "sreset(${0})",
+    "detail": "sreset(slot:number) => ok:number",
+    "description": "Restore a Data screen slot to its configured template value."
+  },
+  {
+    "label": "srefresh",
+    "type": "func",
+    "insert": "srefresh()",
+    "detail": "srefresh() => ok:number",
+    "description": "Redraw the active screen from the current data."
+  },
+  {
+    "label": "screen",
+    "type": "event",
+    "detail": "active screen changed<br>$e0=screen index:number"
+  },
+  {
+    "label": "swipe",
+    "type": "event",
+    "detail": "horizontal swipe on the display<br>$e0=direction:number (+1/-1)<br>$e1=screen index:number"
+  },
+  {
+    "label": "touch",
+    "type": "event",
+    "detail": "short tap on the display<br>$e0=x:number<br>$e1=y:number<br>$e2=screen index:number"
+  }
+]

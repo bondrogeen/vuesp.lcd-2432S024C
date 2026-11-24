@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vuesp.ru/schema/vuesp-project.json",
+  "name": "vuesp.lcd-2432S024C",
+  "summary": "Sunton ESP32-2432S024C: 2.4\" 240x320 TFT, CST820 capacitive touch, SD and a local Vuesp web interface.",
+  "description": "## Vuesp LCD 2432S024C\n\nESP32 firmware for the Sunton/DIYmalls ESP32-2432S024C board: 2.4\" 240x320 ILI9341 TFT, CST820 capacitive touch, microSD, RGB LED, speaker, LDR and battery input.\n\nThe first version focuses on a local status/diagnostics screen and the standard Vuesp web interface.",
+  "platforms": [
+    "ESP32"
+  ],
+  "tags": [
+    "esp32",
+    "lcd",
+    "tft",
+    "touch",
+    "ili9341",
+    "cst820",
+    "sd",
+    "vuesp"
+  ],
+  "createdWith": "vuesp-create@1.0.1"
+}

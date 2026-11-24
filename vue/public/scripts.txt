@@ -1,0 +1,7 @@
+0:boot:log('LCD ready');
+1:screen_next:sshow(1);log('screen',sindex());
+2:screen_tour:$u0=0;while:$u0<3;sshow($u0);wait(2s);$u0=$u0+1;end;log('tour done');
+3:touch_log:on('touch');log('touch',$e0,$e1,'screen',$e2);end;
+4:swipe_log:on('swipe');log('swipe',$e0,'screen',$e1);end;
+5:screen_log:on('screen');log('screen',$e0);end;
+6:data_counter:$u0=0;while:$u0<100;sval(0,$u0);$u0=$u0+1;wait(1s);end;log('counter done');

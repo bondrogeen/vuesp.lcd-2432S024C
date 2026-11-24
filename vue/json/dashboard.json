@@ -1,0 +1,117 @@
+[
+  {
+    "id": "display.brightness",
+    "name": "brightness",
+    "type": "dimmer",
+    "icon": "bulb",
+    "args": [
+      "display.brightness",
+      "display"
+    ],
+    "set": "({ ...b, brightness: v, command: CMD.SET})",
+    "getTo": "v"
+  },
+  {
+    "id": "display.backlight",
+    "name": "backlight",
+    "type": "button",
+    "icon": "tv",
+    "args": [
+      "display.status",
+      "display"
+    ],
+    "get": "(a ? 1 : 0)",
+    "getTo": "v ? 'ON' : 'OFF'",
+    "set": "({ ...b, brightness: v ? 255 : 0, command: CMD.SET})"
+  },
+  {
+    "id": "display.orientation",
+    "name": "orientation",
+    "type": "button",
+    "icon": "layout-grid",
+    "args": [
+      "display.rotation",
+      "display"
+    ],
+    "get": "(a === 3 ? 1 : 0)",
+    "getTo": "v ? 'FLIPPED' : 'LANDSCAPE'",
+    "set": "({ ...b, rotation: v ? 3 : 1, command: CMD.SET})"
+  },
+  {
+    "id": "display.touch",
+    "name": "touch",
+    "type": "info",
+    "icon": "fingerprint",
+    "args": [
+      "display.touchPressed",
+      "display.touchX",
+      "display.touchY"
+    ],
+    "getTo": "v ? (b + ', ' + c) : 'IDLE'"
+  },
+  {
+    "id": "display.sd",
+    "name": "SD",
+    "type": "info",
+    "icon": "storage",
+    "args": [
+      "display.sdUsedMb",
+      "display.sdTotalMb"
+    ],
+    "getTo": "v + ' / ' + b + ' MB'"
+  },
+  {
+    "id": "ports.34",
+    "name": "light",
+    "type": "info",
+    "icon": "sun",
+    "args": [
+      "ports.34.value"
+    ],
+    "getTo": "(v / 4095 * 100).toFixed(0) + '%'"
+  },
+  {
+    "id": "ports.35",
+    "name": "battery",
+    "type": "info",
+    "icon": "battery",
+    "args": [
+      "ports.35.value"
+    ],
+    "getTo": "((v * 3.3 / 4095) * 2).toFixed(2) + ' V'"
+  },
+  {
+    "id": "ports.0",
+    "name": "button",
+    "type": "info",
+    "icon": "fingerprint",
+    "args": [
+      "ports.0.value"
+    ],
+    "getTo": "v ? 'RELEASED' : 'PRESSED'"
+  },
+  {
+    "id": "speaker.beep",
+    "name": "beep",
+    "type": "button",
+    "icon": "speaker",
+    "args": [
+      "speaker.count",
+      "speaker"
+    ],
+    "getTo": "'BEEP'",
+    "set": "({ ...b, command: CMD.WRITE, frequency: 1000, duration: 150 })"
+  },
+  {
+    "id": "rgb.palette",
+    "name": "palette",
+    "type": "palette",
+    "icon": "palette",
+    "args": [
+      "device.rgb",
+      "device"
+    ],
+    "getTo": "v",
+    "set": "({ ...b, command: CMD.SET, rgb: v })"
+  }
+]
