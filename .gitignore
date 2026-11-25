@@ -59,3 +59,9 @@ vue/.env.screen
 /demo-dist/
 compile_commands.json
 /mklittlefs
+
+# Local agent instructions
+.opencode/
+
+# Local OpenSpec workspace
+openspec/

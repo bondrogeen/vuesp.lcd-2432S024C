@@ -80,6 +80,9 @@ static void handleSerialLine(char* command) {
 
   if (strcmp(command, "VUESP:PING") == 0) {
     Serial.println(F("@VUESP:PONG"));
+  } else if (strcmp(command, "VUESP:INFO") == 0) {
+    Serial.printf("@VUESP:INFO:%s,%u,%08X,%s,%s\n", DEF_DEVICE_NAME, (unsigned)infoFS.board, (unsigned)infoFS.id,
+          WiFi.localIP().toString().c_str(), WiFi.softAPIP().toString().c_str());
   } else if (strcmp(command, "VUESP:SCAN") == 0) {
     printWifiScan();
   } else if (strncmp(command, "VUESP:SET\t", 10) == 0) {
